@@ -14,7 +14,6 @@ export default function Friends() {
   }, []);
   return (
     <>
-      <Link to='/add'>Add Friend</Link>
       <div>
         {friends.map((item) => (
           <FriendCard

@@ -32,8 +32,17 @@ class Login extends React.Component {
   };
 
   render() {
+    const styleObj = {
+      display: 'inline-block',
+      align: 'center',
+      fontSize: 18,
+      color: '#000000',
+      textAlign: 'center',
+      padding: '5px',
+      margin: '10px',
+    };
     return (
-      <div>
+      <div style={styleObj}>
         <form onSubmit={this.add}>
           <label>Name</label>
           <input
