@@ -5,28 +5,28 @@ class Login extends React.Component {
   state = {
     credentials: {
       username: '',
-      password: ''
-    }
+      password: '',
+    },
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       credentials: {
         ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
-  login = e => {
+  login = (e) => {
     e.preventDefault();
     axiosWithAuth()
       .post('/api/login', this.state.credentials)
-      .then(res => {
+      .then((res) => {
         localStorage.setItem('token', res.data.payload);
         this.props.history.push('/friends');
       })
-      .catch(err => console.log(err.response));
+      .catch((err) => console.log(err.response));
   };
 
   render() {
@@ -34,14 +34,14 @@ class Login extends React.Component {
       <div>
         <form onSubmit={this.login}>
           <input
-            type="text"
-            name="username"
+            type='text'
+            name='username'
             value={this.state.credentials.username}
             onChange={this.handleChange}
           />
           <input
-            type="password"
-            name="password"
+            type='password'
+            name='password'
             value={this.state.credentials.password}
             onChange={this.handleChange}
           />

@@ -4,55 +4,55 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 class Login extends React.Component {
   state = {
     friendToAdd: {
-        id: '',
-        name: '',
-        age: '',
-        email: '',
-    }
+      id: '',
+      name: '',
+      age: '',
+      email: '',
+    },
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
       friendToAdd: {
         ...this.state.friendToAdd,
-        [e.target.name]: e.target.value
-      }
+        [e.target.name]: e.target.value,
+      },
     });
   };
 
-  add = e => {
+  add = (e) => {
     e.preventDefault();
     axiosWithAuth()
       .post('/api/friends', this.state.friendToAdd)
-      .then(res => {
+      .then((res) => {
         console.log(res);
         this.props.history.push('/friends');
       })
-      .catch(err => console.log(err.response));
+      .catch((err) => console.log(err.response));
   };
 
   render() {
     return (
       <div>
         <form onSubmit={this.add}>
-        <label>Name</label>
+          <label>Name</label>
           <input
-            type="text"
-            name="name"
+            type='text'
+            name='name'
             value={this.state.friendToAdd.name}
             onChange={this.handleChange}
           />
           <label>Age</label>
           <input
-            type="text"
-            name="age"
+            type='text'
+            name='age'
             value={this.state.friendToAdd.age}
             onChange={this.handleChange}
           />
           <label>Email</label>
           <input
-            type="text"
-            name="email"
+            type='text'
+            name='email'
             value={this.state.friendToAdd.email}
             onChange={this.handleChange}
           />
