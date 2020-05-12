@@ -14,6 +14,7 @@ export default function FriendCard(props) {
     height: '200px',
     boxShadow: '3px 3px 5px 6px #ccc',
   };
+
   return (
     <div style={styleObj} id={props.key}>
       <h1>Name: {props.name}</h1>
