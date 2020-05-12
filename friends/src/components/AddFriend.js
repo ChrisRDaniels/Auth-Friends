@@ -41,6 +41,7 @@ class Login extends React.Component {
       padding: '5px',
       margin: '10px',
     };
+
     return (
       <div style={styleObj}>
         <form onSubmit={this.add}>

@@ -6,6 +6,7 @@ import PrivateRoute from './components/PrivateRoute';
 import Login from './components/Login';
 import Friends from './components/Friends';
 import AddFriend from './components/AddFriend';
+import { urlencoded } from 'body-parser';
 
 function App() {
   const styleObj = {
@@ -16,6 +17,8 @@ function App() {
     textAlign: 'center',
     padding: '5px',
     margin: '10px',
+    backgroundImage:
+      'https://cdn0.iconfinder.com/data/icons/network-data-security/49/slice440-512.png',
   };
 
   return (
